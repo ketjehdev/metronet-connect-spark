@@ -188,6 +188,91 @@ const Coverage = () => {
         </div>
       </section>
 
+      {/* Installation Process */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Proses Instalasi Mudah</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Dari survey hingga aktivasi, kami pastikan proses berjalan lancar dan profesional
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  step: "1",
+                  title: "Survey Lokasi",
+                  description: "Tim kami akan melakukan survey untuk memastikan kesiapan infrastruktur di lokasi Anda",
+                },
+                {
+                  step: "2",
+                  title: "Instalasi Perangkat",
+                  description: "Teknisi profesional akan memasang fiber optik dan router dengan rapi dan aman",
+                },
+                {
+                  step: "3",
+                  title: "Testing Koneksi",
+                  description: "Kami melakukan testing menyeluruh untuk memastikan koneksi bekerja optimal",
+                },
+                {
+                  step: "4",
+                  title: "Aktivasi & Edukasi",
+                  description: "Aktivasi layanan dan penjelasan penggunaan kepada pelanggan",
+                },
+              ].map((item, index) => (
+                <div key={index} className="flex gap-4 group">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-xl shrink-0 group-hover:shadow-glow transition-all duration-300">
+                    {item.step}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Success Stories */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Cerita Sukses Pelanggan</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Bagaimana Metronet membantu pelanggan mencapai tujuan mereka
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                name: "CV. Digital Kreatif",
+                location: "Yogyakarta",
+                story: "Dengan Metronet Business Pro, produktivitas tim kami meningkat 40%. Video conference lancar dan upload project ke client jadi lebih cepat.",
+              },
+              {
+                name: "Keluarga Wijaya",
+                location: "Solo",
+                story: "3 anak sekolah online bersamaan, orang tua WFH, streaming Netflix malam hari - semua lancar dengan paket Family 50 Mbps!",
+              },
+            ].map((story, index) => (
+              <div
+                key={index}
+                className="bg-gradient-card p-8 rounded-xl border border-border hover:border-primary transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold">{story.name}</h3>
+                  <p className="text-sm text-primary">{story.location}</p>
+                </div>
+                <p className="text-muted-foreground italic">"{story.story}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

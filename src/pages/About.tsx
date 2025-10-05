@@ -181,6 +181,80 @@ const About = () => {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Tim Profesional Kami</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Dipimpin oleh para ahli berpengalaman di bidang telekomunikasi dan jaringan
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                name: "Ir. Bambang Setiawan",
+                role: "CEO & Founder",
+                description: "20+ tahun pengalaman di industri telekomunikasi",
+              },
+              {
+                name: "Dra. Siti Rahayu, M.T.",
+                role: "CTO",
+                description: "Expert dalam infrastruktur fiber optik",
+              },
+              {
+                name: "Ahmad Fauzi, S.Kom",
+                role: "Head of Customer Service",
+                description: "Fokus pada kepuasan dan pengalaman pelanggan",
+              },
+            ].map((member, index) => (
+              <div
+                key={index}
+                className="bg-gradient-card p-6 rounded-xl border border-border hover:border-primary transition-all duration-300 hover:shadow-lg text-center group"
+              >
+                <div className="w-24 h-24 rounded-full bg-gradient-primary mx-auto mb-4 flex items-center justify-center text-primary-foreground font-bold text-3xl group-hover:shadow-glow transition-all duration-300">
+                  {member.name.charAt(0)}
+                </div>
+                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                <p className="text-sm font-semibold text-primary mb-2">{member.role}</p>
+                <p className="text-muted-foreground text-sm">{member.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Penghargaan & Sertifikasi</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Komitmen kami terhadap kualitas telah diakui berbagai institusi
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { title: "ISO 9001:2015", desc: "Quality Management" },
+              { title: "Best ISP 2024", desc: "Indonesia Telecom Award" },
+              { title: "Customer Choice", desc: "Service Excellence" },
+              { title: "Green Technology", desc: "Eco-Friendly Network" },
+            ].map((award, index) => (
+              <div
+                key={index}
+                className="bg-card p-6 rounded-xl border border-border hover:border-primary transition-all duration-300 hover:shadow-md text-center group"
+              >
+                <div className="mb-3 p-3 bg-gradient-primary rounded-lg w-fit mx-auto group-hover:shadow-glow transition-all duration-300">
+                  <Award className="h-8 w-8 text-primary-foreground" />
+                </div>
+                <h3 className="font-bold mb-1">{award.title}</h3>
+                <p className="text-sm text-muted-foreground">{award.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

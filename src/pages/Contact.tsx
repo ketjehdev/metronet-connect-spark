@@ -241,11 +241,84 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Office Locations */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Kantor Cabang Kami</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Kunjungi kantor cabang Metronet terdekat di kota Anda
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                city: "Yogyakarta",
+                address: "Jl. Mangkubumi No. 27",
+                phone: "(0274) 555-999",
+                hours: "08:00 - 17:00 WIB",
+              },
+              {
+                city: "Solo",
+                address: "Jl. Slamet Riyadi No. 45",
+                phone: "(0271) 555-888",
+                hours: "08:00 - 17:00 WIB",
+              },
+              {
+                city: "Semarang",
+                address: "Jl. Pemuda No. 123",
+                phone: "(024) 555-777",
+                hours: "08:00 - 17:00 WIB",
+              },
+              {
+                city: "Surabaya",
+                address: "Jl. Basuki Rahmat No. 88",
+                phone: "(031) 555-666",
+                hours: "08:00 - 17:00 WIB",
+              },
+              {
+                city: "Jakarta",
+                address: "Jl. Sudirman No. 200",
+                phone: "(021) 555-555",
+                hours: "08:00 - 17:00 WIB",
+              },
+              {
+                city: "Bandung",
+                address: "Jl. Asia Afrika No. 50",
+                phone: "(022) 555-444",
+                hours: "08:00 - 17:00 WIB",
+              },
+            ].map((office, index) => (
+              <div
+                key={index}
+                className="bg-card p-6 rounded-xl border border-border hover:border-primary transition-all duration-300 hover:shadow-md"
+              >
+                <h3 className="text-xl font-bold mb-4">{office.city}</h3>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <span className="text-muted-foreground">{office.address}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone className="h-4 w-4 text-primary shrink-0" />
+                    <span className="text-muted-foreground">{office.phone}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4 text-primary shrink-0" />
+                    <span className="text-muted-foreground">{office.hours}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Lokasi Kantor Kami</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Lokasi Kantor Pusat</h2>
             <p className="text-muted-foreground text-lg">Kunjungi kantor pusat kami di Yogyakarta</p>
           </div>
           <div className="max-w-5xl mx-auto">
@@ -261,6 +334,46 @@ const Contact = () => {
                 title="Metronet Office Location"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pertanyaan yang Sering Diajukan</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Temukan jawaban untuk pertanyaan umum sebelum menghubungi kami
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                question: "Bagaimana cara mendaftar layanan Metronet?",
+                answer: "Anda bisa mendaftar melalui website, telepon ke (0274) 555-999, atau datang langsung ke kantor cabang terdekat. Tim kami akan membantu proses pendaftaran Anda.",
+              },
+              {
+                question: "Berapa lama waktu yang dibutuhkan untuk instalasi?",
+                answer: "Setelah pendaftaran disetujui, instalasi biasanya dilakukan dalam 3-5 hari kerja. Proses instalasi sendiri memakan waktu 2-4 jam.",
+              },
+              {
+                question: "Apa yang harus saya lakukan jika internet bermasalah?",
+                answer: "Hubungi customer service kami 24/7 melalui telepon (0274) 555-999 atau WhatsApp +62 812-3456-7890. Tim teknis kami akan segera membantu Anda.",
+              },
+              {
+                question: "Apakah bisa pindah alamat?",
+                answer: "Ya, layanan bisa dipindah ke alamat baru (dalam area coverage). Silakan hubungi customer service minimal 7 hari sebelum pindah.",
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="bg-card p-6 rounded-xl border border-border hover:border-primary transition-all duration-300"
+              >
+                <h3 className="text-lg font-bold mb-2">{faq.question}</h3>
+                <p className="text-muted-foreground">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

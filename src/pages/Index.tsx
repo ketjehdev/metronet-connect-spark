@@ -144,17 +144,137 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Testimonials Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Apa Kata Pelanggan Kami</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Ribuan pelanggan telah mempercayai Metronet untuk kebutuhan internet mereka
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                name: "Budi Santoso",
+                role: "Pemilik Bisnis Online",
+                content: "Sejak menggunakan Metronet, bisnis online saya jadi lebih lancar. Kecepatan stabil dan support nya responsif banget!",
+                rating: 5,
+              },
+              {
+                name: "Siti Nurhaliza",
+                role: "Ibu Rumah Tangga",
+                content: "Anak-anak bisa belajar online dengan nyaman, saya bisa streaming tanpa buffering. Puas banget dengan layanan Metronet!",
+                rating: 5,
+              },
+              {
+                name: "Ahmad Wijaya",
+                role: "IT Manager",
+                content: "Untuk kebutuhan kantor, Metronet sangat reliable. SLA nya benar-benar dijaga dan tim teknisnya profesional.",
+                rating: 5,
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-card p-6 rounded-xl border border-border hover:border-primary transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <div key={i} className="w-5 h-5 bg-gradient-primary rounded-sm" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold">{testimonial.name}</h4>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mudah Berlangganan</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              4 Langkah sederhana untuk menikmati internet cepat dari Metronet
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                step: "01",
+                title: "Cek Area",
+                description: "Pastikan lokasi Anda sudah terjangkau layanan Metronet",
+              },
+              {
+                step: "02",
+                title: "Pilih Paket",
+                description: "Pilih paket internet yang sesuai dengan kebutuhan Anda",
+              },
+              {
+                step: "03",
+                title: "Daftar",
+                description: "Isi formulir pendaftaran online atau hubungi customer service",
+              },
+              {
+                step: "04",
+                title: "Instalasi",
+                description: "Tim teknisi kami akan melakukan instalasi di lokasi Anda",
+              },
+            ].map((item, index) => (
+              <div key={index} className="text-center group">
+                <div className="mb-4 mx-auto w-20 h-20 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-2xl group-hover:shadow-glow transition-all duration-300">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
       <section className="py-20 bg-gradient-hero">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { number: "99.9%", label: "Uptime Jaringan" },
+              { number: "50K+", label: "Pelanggan Puas" },
+              { number: "20+", label: "Kota Terjangkau" },
+              { number: "24/7", label: "Customer Support" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-primary-foreground/80 text-sm md:text-base">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Siap Upgrade Pengalaman Internet Anda?
           </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Hubungi kami sekarang dan dapatkan penawaran terbaik untuk paket internet Metronet
           </p>
           <Link to="/contact">
-            <Button variant="accent" size="lg">
+            <Button variant="default" size="lg">
               Hubungi Kami Sekarang
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

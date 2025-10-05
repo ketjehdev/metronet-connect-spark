@@ -1,4 +1,4 @@
-import { Home, Building2, Server, Globe, Shield, Headphones } from "lucide-react";
+import { Home, Building2, Server, Globe, Shield, Headphones, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
@@ -217,6 +217,95 @@ const Services = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Our Service */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Keunggulan Layanan Kami</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Mengapa pelanggan memilih Metronet untuk kebutuhan internet mereka
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                icon: Zap,
+                title: "Teknologi Fiber Optik Terbaru",
+                description: "Menggunakan infrastruktur fiber optik generasi terbaru untuk kecepatan maksimal dan latensi rendah.",
+              },
+              {
+                icon: Shield,
+                title: "Jaminan Uptime 99.9%",
+                description: "Sistem redundansi dan monitoring 24/7 memastikan koneksi internet Anda selalu stabil.",
+              },
+              {
+                icon: Headphones,
+                title: "Customer Support Responsif",
+                description: "Tim support kami siap membantu via telepon, WhatsApp, atau email kapan saja Anda membutuhkan.",
+              },
+              {
+                icon: Server,
+                title: "Instalasi Profesional Gratis",
+                description: "Teknisi bersertifikat akan melakukan instalasi dengan rapi dan profesional tanpa biaya tambahan.",
+              },
+            ].map((benefit, index) => (
+              <div
+                key={index}
+                className="bg-card p-6 rounded-xl border border-border hover:border-primary transition-all duration-300 hover:shadow-lg group flex gap-4"
+              >
+                <div className="p-3 bg-gradient-primary rounded-lg h-fit group-hover:shadow-glow transition-all duration-300">
+                  <benefit.icon className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pertanyaan Umum</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Jawaban untuk pertanyaan yang sering ditanyakan tentang layanan kami
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                question: "Berapa lama proses instalasi?",
+                answer: "Proses instalasi biasanya memakan waktu 2-4 jam tergantung kondisi lokasi. Tim kami akan menghubungi Anda untuk konfirmasi jadwal instalasi.",
+              },
+              {
+                question: "Apakah ada biaya instalasi?",
+                answer: "Untuk semua paket internet rumah, instalasi GRATIS. Untuk paket bisnis, biaya instalasi akan disesuaikan dengan kebutuhan infrastruktur.",
+              },
+              {
+                question: "Bagaimana cara upgrade paket?",
+                answer: "Anda bisa upgrade paket kapan saja melalui customer service kami. Perubahan akan berlaku di billing period berikutnya.",
+              },
+              {
+                question: "Apakah ada kontrak minimal?",
+                answer: "Paket rumah tidak ada kontrak minimal. Paket bisnis memiliki kontrak minimal 12 bulan dengan benefit harga lebih kompetitif.",
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="bg-gradient-card p-6 rounded-xl border border-border hover:border-primary transition-all duration-300"
+              >
+                <h3 className="text-lg font-bold mb-2">{faq.question}</h3>
+                <p className="text-muted-foreground">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
